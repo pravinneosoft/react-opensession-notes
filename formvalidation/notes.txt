@@ -1,0 +1,30 @@
+-> Uncontrolled forms component:
+   -> Any component whose value is not controlled by React, but by the DOM itself is coined as an uncontrolled component.
+   -> If we want to access the value of the input field, we use the useRef React hook.
+-> Controlled forms component:
+   ->Any component whose value and changing of values is controlled by React and not the DOM are coined as controlled components.
+   -> In our example, the useState hook is being used to define the value of the input field.
+
+-> We will be using controlled components. Why?
+  -> Most React form libraries available utilize the power of controlled components to keep track of the form values and easily change and manage them.
+  -> We will be using controlled components when we dive deep into the workings of React Formik — a famous library for creating and managing complicated forms.
+
+-> Introduction into Formik
+  -> Formik is a library for easily creating React forms. 
+  -> You can checkout the official website of formik on: https://www.formik.org 
+  -> Formik provides a powerful abstraction over normal HTML forms and a high level of functionality and form data management.
+    npm install formik
+-> Redux-Form is 22.5 kB minified gzipped (Formik is 12.7 kB)
+-> Introduction to Yup
+   As and when your form grows in complexity, writing everything from scratch becomes a burden. Taking for instance some complex form with various validation fields — it’s a pure torture to do it with vanilla JS!
+   -> Yup is a validation schema builder package which helps us create custom and complex form validations extremely easily.
+   npm install yup
+
+     const validationSchema=yup.object().shape({
+      password:yup.string()
+         .required("Password is required"),
+      confirmPassword:yup.string()
+         .required("confirmPassword is required')
+         .oneOf([yup.ref('password'),null],"Passwords don't match")
+     })
+ 

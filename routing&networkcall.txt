@@ -1,0 +1,73 @@
+--> React Js :- It is an open-source , cross platform javascript library ,to build reusable user interface.(front end)
+  --> It is used for to develop SPA (Single Page Applications)
+  --> It is maintained by facebook 
+  --> we can develop web apps and also mobile apps (react native)
+  -> Features of react js 
+    -> Component 
+    -> JSX 
+    -> Virtual DOM 
+-> Environmental Setup 
+    -> Node js environment 
+      -> Downaload and install node js 
+      https://nodejs.org/en/download/?msclkid=5ca9be47cf9e11ecbc259156a8e0f479 
+       -> install node version higher then 14 
+    -> How we create react app 
+       npx create-react-app appname 
+    -> How we run react app 
+      open app in cmd / terminal 
+       -> npm start (http://localhost:3000)
+    -> How react app is boot (execute)
+    index.html 
+    <div id="root"></div>  ----> src/index.js (it is main javascript entry point file ) -> It get the id root from the index.html and render the App Component (default) on the div.
+
+    --> Component :- core building block of a react app. Every component have their own design and logic.
+      -> Types of components 
+        -> Class 
+          import React,{Component} from 'react';
+          class Home extends Component{
+              //logical
+               render(){
+                   return (
+                       <>
+                         //html
+                       </>
+                   )
+               }
+          }
+          export default Home
+        -> Function 
+        import React from 'react';
+        function Home(){
+            return(
+                <>
+                  <h2> Home Component </h2>
+                </>
+            )
+        }
+        export default Home
+        -> props (property):- pass data from parent to child component
+        -> state : manage data within a component 
+           useState hook to manage state
+        --> Routing :- with the help of it we can create SPA.
+          --> React Router package (3rd party package)
+            npm install react-router-dom --save 
+          -> Layout 
+        Home  About Us   Services   Contact Us 
+          <div>
+             // load dynamic components when route is match with the url
+          </div>
+        --> How we consume APIs 
+           fetch() :- javascript method 
+           axios() :- return promise 
+             npm install axios --save 
+            -> json server :- all rest apis in behalf of json file 
+             npm install json-server --g 
+             -> server folder 
+                products.json 
+                {
+                  "products": [
+                    {"id":1,"pname":"A","price":1234,"quantity":5,"image":"path"}
+                  ]
+                }
+                json-server --watch products.json --port 3001
+

@@ -1,0 +1,6 @@
+  ---> Redux :- 
+    State Management :- 
+
+     parent to child --> props 
+
+             store (put all state data)
